@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="application-name" content="Ashwoq's Portfolio - 2D" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title & Description -->
+    <title>Ashwoq's Portfolio - 2D</title>
+    <meta
+      name="description"
+      content="Explore the 2D portfolio of Ashwoq — a frontend developer showcasing a scroll-driven road trip experience built with HTML, CSS, GSAP, and custom Figma illustrations."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/ad.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/ad.svg" />
+
+    <!-- Google Verification -->
+    <meta
+      name="google-site-verification"
+      content="3Yv4k3ciHQGW2mNdT66XuWJfiIDTG1Gu_YF9sn5e88Y"
+    />
+
+    <!-- Fonts -->
+    <style>
+      /* @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ribeye+Marrow&display=swap"); */
+      @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ribeye+Marrow&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@1..1000&display=swap");
+    </style>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Sitemap -->
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="/sitemap.xml"
+    />
+
+    <!-- keywords but nouse -->
+    <meta
+      name="keywords"
+      content="Ashwoq, Ashwoq Dedath, Ashwoq S , Ashwoq Dedath S , Ashwoq Portfolio , Ashwoq's , 2D Portfolio , 2D Portfolio Ashwoq , Frontend Developer , Frontend Developer Ashwoq , Ashwoq Frontend Developer , Ashwoq 2D Portfolio , Ashwoq's 2D Portfolio , HTML, CSS, GSAP, Figma, Web Development, Web Design, Creative Portfolio"
+    />
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ashwoq's Portfolio" />
+    <meta property="og:url" content="https://ashwoq2d.netlify.app/" />
+    <meta property="og:title" content="Ashwoq's | 2D Portfolio" />
+    <meta
+      property="og:description"
+      content="A scroll-driven road trip experience through Ashwoq's frontend journey. Hand-illustrated assets in Figma, animated with HTML, CSS, and GSAP."
+    />
+    <meta
+      property="og:image"
+      content="https://ashwoq2d.netlify.app/preview2d.webp"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://ashwoq2d.netlify.app/" />
+    <meta name="twitter:title" content="Ashwoq's | 2D Portfolio" />
+    <meta
+      name="twitter:description"
+      content="A scroll-driven 2D journey built with HTML, CSS, GSAP, and custom SVGs from Figma — explore my creative frontend world!"
+    />
+    <meta
+      name="twitter:image"
+      content="https://ashwoq2d.netlify.app/preview2d.webp"
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ashwoq Dedath S",
+        "url": "https://ashwoq2d.netlify.app/",
+        "logo": "https://ashwoq2d.netlify.app/ad.svg",
+        "jobTitle": "Frontend Developer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/ashwoq-dedath-s-8636ab203/",
+          "https://github.com/Ashwoq"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://ashwoq2d.netlify.app/",
+        "name": "Ashwoq's 2D Portfolio",
+        "logo": "https://ashwoq2d.netlify.app/ad.svg",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ashwoq2d.netlify.app/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+    <script>
+      window.addEventListener("load", () => {
+        // Loading Start
+        const loadingScreen = document.getElementById("loadingScreen");
+        const content = document.getElementById("content");
+
+        // Select all image elements
+        // const images = document.querySelectorAll("img");
+
+        const images = Array.from(document.querySelectorAll("img"));
+        document.querySelectorAll("*").forEach((el) => {
+          const bg = window.getComputedStyle(el).backgroundImage;
+          if (bg && bg !== "none" && bg.includes("url(")) {
+            const match = bg.match(/url\(["']?(.*?)["']?\)/);
+            if (match && match[1]) {
+              const img = new Image();
+              img.src = match[1];
+              images.push(img);
+            }
+          }
+        });
+
+        let loadedImages = 0;
+
+        // Minimum display time for the loading screen (in milliseconds)
+        const minimumLoadingTime = 2000; // 5 seconds
+        const startTime = Date.now(); // Record the start time
+
+        // Function to handle image loading
+        const imageLoaded = () => {
+          loadedImages++;
+          if (loadedImages === images.length) {
+            const elapsedTime = Date.now() - startTime; // Calculate elapsed time
+
+            // Ensure loading screen stays for at least the minimum time
+            const remainingTime = Math.max(0, minimumLoadingTime - elapsedTime);
+
+            setTimeout(() => {
+              // Remove loading screen from the DOM when all images are loaded
+              loadingScreen.remove(); // Completely remove the div and its children
+              // Optionally, reveal the main content
+              content.style.display = "flex";
+            }, remainingTime);
+          }
+        };
+
+        // Attach load event listeners to all images
+        images.forEach((img) => {
+          if (img.complete) {
+            imageLoaded(); // Image already loaded
+          } else {
+            img.addEventListener("load", imageLoaded); // Wait for image to load
+            img.addEventListener("error", imageLoaded); // Handle loading errors
+          }
+        });
+
+        // Ensure content is hidden until loading is complete
+        content.style.display = "none";
+
+        // Loading End
+
+        // Change Theme Start
+        const themeDivs = document.querySelectorAll(
+          ".theme1, .theme2, .theme3"
+        );
+        const themeRed = document.querySelector(".theme2");
+        const tvOuterBox = document.querySelector(".periyaBhai");
+        const themeCurrent = document.querySelector(".themeCurrent");
+        const grandMaster = document.querySelector(".grandMaster");
+
+        // Function to get the background of the selected theme
+        function getThemeBackground(themeDiv) {
+          return getComputedStyle(themeDiv).background;
+        }
+
+        themeRed.classList.add("selectedThemeHovering");
+
+        // Apply the clicked div's background to the target element and assign animation
+        themeDivs.forEach((div) => {
+          div.addEventListener("click", () => {
+            const selectedBackground = getThemeBackground(div);
+
+            // Remove previous animations
+            grandMaster.classList.remove("grandMasterTransition");
+
+            // Force reflow to re-trigger the animation (clears the animation frame)
+            void tvOuterBox.offsetWidth;
+
+            // Add the animation class back
+            grandMaster.classList.add("grandMasterTransition");
+
+            // Delay background change to occur after animation
+            setTimeout(() => {
+              // Set the background of the outer box and themeCurrent with smooth transition
+              tvOuterBox.style.background = selectedBackground;
+              themeCurrent.style.background = selectedBackground;
+
+              // Change body background and antenna colors based on the theme
+              if (div.id === "theme1") {
+                document.body.style.background =
+                  "var(--gradient-bg-green-outer)";
+                document.querySelector(".antennaBottom").style.background =
+                  "var(--gradient-bg-antenna-box-red)";
+                document.querySelector(".antennaLeft").style.background =
+                  "var(--gradient-bg-antenna-red)";
+                document.querySelector(".antennaRight").style.background =
+                  "var(--gradient-bg-antenna-red)";
+              } else if (div.id === "theme2") {
+                document.body.style.background =
+                  "var(--gradient-bg-blue-outer)";
+                document.querySelector(".antennaBottom").style.background =
+                  "var(--gradient-bg-antenna-box-green)";
+                document.querySelector(".antennaLeft").style.background =
+                  "var(--gradient-bg-antenna-green)";
+                document.querySelector(".antennaRight").style.background =
+                  "var(--gradient-bg-antenna-green)";
+              } else if (div.id === "theme3") {
+                document.body.style.background =
+                  "var(--gradient-bg-darkBlue-outer)";
+                document.querySelector(".antennaBottom").style.background =
+                  "var(--gradient-bg-antenna-box-blue)";
+                document.querySelector(".antennaLeft").style.background =
+                  "var(--gradient-bg-antenna-blue)";
+                document.querySelector(".antennaRight").style.background =
+                  "var(--gradient-bg-antenna-blue)";
+              }
+            }, 500); // Adjust delay to match the animation duration (in milliseconds)
+
+            // Reset any previously selected theme class
+            themeDivs.forEach((el) =>
+              el.classList.remove("selectedThemeHovering")
+            );
+
+            // Add the selected theme class to the clicked theme
+            div.classList.add("selectedThemeHovering");
+          });
+        });
+        // Change Theme End
+
+        // Display building info on hover
+        document.querySelectorAll(".buildingHover").forEach((building) => {
+          building.addEventListener("mouseenter", (e) => {
+            const info = e.target.dataset.info;
+            console.log("Hey you have hovered the", info);
+          });
+        });
+
+        document.querySelectorAll(".buildingHover").forEach((building) => {
+          building.addEventListener("mouseenter", (e) => {
+            const info = e.target.dataset.info;
+            console.log("Hey you have hovered the", info);
+          });
+        });
+
+        document.querySelector(".roadGrpDiv").classList.add("pausedAnimation");
+        document.querySelector(".carGrp").classList.add("pausedAnimation");
+        document
+          .querySelector("#car-back-wheel")
+          .classList.add("pausedAnimation");
+        document
+          .querySelector("#car-front-wheel")
+          .classList.add("pausedAnimation");
+
+        // Initialize GSAP autoplay animation (initially paused)
+        let isAutoplayOver = false;
+        let autoplay = gsap.to(".buildings", {
+          x: "-=9650",
+          duration: 60,
+          ease: "linear",
+          paused: true,
+          onComplete: () => {
+            // Add classes to pause animations for road and car when gsap animation ends
+            // alert("Over1");
+            document
+              .querySelector(".roadGrpDiv")
+              .classList.add("pausedAnimation");
+            document.querySelector(".carGrp").classList.add("pausedAnimation");
+            document
+              .querySelector("#car-back-wheel")
+              .classList.add("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.add("pausedAnimation");
+            // alert("Over2");
+            isAutoplayOver = true;
+          },
+        });
+
+        // Scroll functionality variables
+        let currentX = 0;
+
+        // Scroll event listener
+        window.addEventListener("wheel", (event) => {
+          const buildings = document.querySelector(".buildings");
+          const gap = parseFloat(getComputedStyle(buildings).gap) || 0;
+          const totalGapWidth =
+            gap * (document.querySelectorAll(".building").length - 20);
+          const buildingsWidth = buildings.scrollWidth + totalGapWidth;
+          const containerWidth = window.innerWidth;
+          let scrollTimeout;
+
+          if (buttonOneScroll) {
+            const scrollAmount = event.deltaY * 2;
+            currentX -= scrollAmount;
+            // Boundary checks
+            const maxScroll = -(buildingsWidth - containerWidth);
+            if (currentX > 0) currentX = 0;
+            if (currentX < maxScroll) currentX = maxScroll;
+
+            gsap.to(".buildings", {
+              x: currentX,
+              ease: "linear",
+              duration: 0.5,
+            });
+
+            gsap.to(".carGrp", {
+              left: `${-(currentX / 9695.2) * 100}%`, // Move carGrp to the end
+              duration: 0.5, // Same as autoplay duration
+              ease: "linear",
+              // paused: true, // Start paused
+              // onComplete: () => {
+              //   console.log("Car reached the end!");
+              //   // Optionally loop or reset the animation
+              //   gsap.set(".carGrp", { left: "120%" }); // Reset position for the next loop
+              // },
+            });
+
+            const roadMovement = currentX / 2;
+            document.querySelector(
+              ".roadGrpDiv"
+            ).style.backgroundPosition = `${roadMovement}px 0`;
+            document
+              .querySelector("#car-back-wheel")
+              .classList.remove("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.remove("pausedAnimation");
+            document
+              .querySelector(".carGrp")
+              .classList.remove("pausedAnimation");
+          }
+
+          clearTimeout(scrollTimeout);
+
+          // Set a timeout to detect scroll stop
+          scrollTimeout = setTimeout(() => {
+            // Add the class when scrolling stops
+            document
+              .querySelector("#car-back-wheel")
+              .classList.add("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.add("pausedAnimation");
+            document.querySelector(".carGrp").classList.add("pausedAnimation");
+          }, 200); // Adjust timeout duration as needed
+        });
+
+        let buttonOneScroll = false;
+        let buttonTwoAutoplay = false;
+        let buttonThreePausePlay = false;
+
+        // Function to simulate scroll when button is held
+        let isScrolling;
+
+        function startScrolling() {
+          const buildings = document.querySelector(".buildings");
+          const gap = parseFloat(getComputedStyle(buildings).gap) || 0;
+          const totalGapWidth =
+            gap * (document.querySelectorAll(".building").length - 18);
+          const buildingsWidth = buildings.scrollWidth + totalGapWidth;
+          const containerWidth = window.innerWidth;
+          let scrollTimeout;
+
+          if (!isScrolling) {
+            isScrolling = true;
+            // Start scrolling
+            scrollInterval = setInterval(() => {
+              const scrollAmount = 2.5; // Adjust the scroll speed here (increase for faster scroll)
+
+              currentX -= scrollAmount;
+
+              // Boundary checks
+              const maxScroll = -(buildingsWidth - containerWidth);
+              if (currentX > 0) currentX = 0;
+              if (currentX < maxScroll) currentX = maxScroll;
+
+              // Update GSAP animations for buildings and cars
+              gsap.to(".buildings", {
+                x: currentX,
+                ease: "linear",
+                duration: 0.5,
+              });
+
+              gsap.to(".carGrp", {
+                left: `${-((currentX * 1.07) / buildingsWidth) * 100}%`, // Adjust car movement speed for better sync
+                duration: 0.5,
+                ease: "linear",
+              });
+
+              // Adjust the road movement based on the scroll speed
+              const roadMovement = currentX * 15; // Make road movement more proportional
+              document.querySelector(
+                ".roadGrpDiv"
+              ).style.backgroundPosition = `${roadMovement}px 0`;
+
+              document
+                .querySelector("#car-back-wheel")
+                .classList.remove("pausedAnimation");
+              document
+                .querySelector("#car-front-wheel")
+                .classList.remove("pausedAnimation");
+              document
+                .querySelector(".carGrp")
+                .classList.remove("pausedAnimation");
+            }, 10); // Adjust the interval speed as needed
+          }
+        }
+
+        // Function to stop scrolling
+        function stopScrolling() {
+          isScrolling = false;
+          clearInterval(scrollInterval); // Stop the scrolling
+
+          // Pause the car animation
+          document
+            .querySelector("#car-back-wheel")
+            .classList.add("pausedAnimation");
+          document
+            .querySelector("#car-front-wheel")
+            .classList.add("pausedAnimation");
+          document.querySelector(".carGrp").classList.add("pausedAnimation");
+        }
+
+        // Add event listeners for the button (Mobile: touch events, Desktop: mouse events)
+
+        function preventImageDownload(event) {
+          event.preventDefault(); // Prevent default browser behavior
+        }
+
+        const buttonHoldBox = document.querySelector(".holdBox");
+
+        // For mobile touch
+        buttonHoldBox.addEventListener("touchstart", startScrolling); // Start scroll when touched
+        buttonHoldBox.addEventListener("touchend", stopScrolling); // Stop scroll when touch ends
+        buttonHoldBox.addEventListener("touchcancel", stopScrolling); // Stop scroll if touch is canceled
+
+        //
+
+        let carMove = gsap.to(".carGrp", {
+          left: "100%", // Move carGrp to the end
+          duration: 60, // Same as autoplay duration
+          ease: "linear",
+          paused: true, // Start paused
+          onComplete: () => {
+            // console.log("Car reached the end!");
+            // Optionally loop or reset the animation
+            gsap.set(".carGrp", { left: "110%" }); // Reset position for the next loop
+          },
+        });
+
+        // Checker Start
+        // Get the checkboxes
+        const checker1 = document.querySelector(".checker1");
+        const checker2 = document.querySelector(".checker2");
+        const checker3 = document.querySelector(".checker3");
+
+        // Event listener for checker1
+        checker1.addEventListener("change", () => {
+          if (checker1.checked) {
+            checker3.disabled = true;
+            // checker3.style.opacity = "0.5";
+            // Uncheck the other checkboxes
+            checker2.checked = false;
+            checker3.checked = false;
+
+            buttonHoldBox.style.opacity = "1";
+
+            buttonOneScroll = true;
+            buttonTwoAutoplay = false;
+            buttonThreePausePlay = false;
+            isAutoplayOver = false;
+
+            autoplay.restart();
+            autoplay.pause();
+            // autoplay.reverse().duration(3);
+            carMove.restart();
+            carMove.pause();
+            // carMove.reverse().duration(3);
+
+            document
+              .querySelector(".roadGrpDiv")
+              .classList.add("pausedAnimation");
+            document.querySelector(".carGrp").classList.add("pausedAnimation");
+            document
+              .querySelector("#car-back-wheel")
+              .classList.add("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.add("pausedAnimation");
+          } else {
+            checker2.checked = true;
+            checker3.disabled = false;
+            buttonHoldBox.style.opacity = "0";
+            checker2.dispatchEvent(new Event("change"));
+
+            // checker3.style.opacity = "1";
+          }
+          // // Uncheck the other checkboxes
+          // // checker2.checked = false;
+          // checker3.checked = false;
+
+          // buttonOneScroll = true;
+          // buttonTwoAutoplay = false;
+          // buttonThreePausePlay = false;
+          // isAutoplayOver = false;
+
+          // autoplay.restart();
+          // autoplay.pause();
+          // // autoplay.reverse().duration(3);
+          // carMove.restart();
+          // carMove.pause();
+          // // carMove.reverse().duration(3);
+
+          // document.querySelector(".roadGrpDiv").classList.add("pausedAnimation");
+          // document.querySelector(".carGrp").classList.add("pausedAnimation");
+          // document
+          //   .querySelector("#car-back-wheel")
+          //   .classList.add("pausedAnimation");
+          // document
+          //   .querySelector("#car-front-wheel")
+          //   .classList.add("pausedAnimation");
+        });
+
+        // Ensure the checkbox is checked on initial load
+        checker1.checked = true;
+        buttonHoldBox.style.opacity = "1";
+
+        // Manually trigger the 'change' event to activate it immediately
+        checker1.dispatchEvent(new Event("change"));
+
+        // Event listener for checker2
+        checker2.addEventListener("change", () => {
+          if (checker2.checked) {
+            // Uncheck the other checkboxes
+            checker1.checked = false;
+            checker3.checked = false;
+            checker3.disabled = false;
+
+            buttonHoldBox.style.opacity = "0";
+
+            //
+            buttonOneScroll = false;
+            buttonTwoAutoplay = true;
+            buttonThreePausePlay = false;
+
+            if (buttonTwoAutoplay === true && buttonThreePausePlay === false) {
+              currentX = 0;
+              autoplay.restart().progress(0);
+              carMove.restart().progress(0);
+
+              document
+                .querySelector(".roadGrpDiv")
+                .classList.remove("pausedAnimation");
+              document
+                .querySelector(".carGrp")
+                .classList.remove("pausedAnimation");
+              document
+                .querySelector("#car-back-wheel")
+                .classList.remove("pausedAnimation");
+              document
+                .querySelector("#car-front-wheel")
+                .classList.remove("pausedAnimation");
+
+              // Add mouse enter/leave logic for hover effect
+              document
+                .querySelectorAll(
+                  ".buildingHover, .linkerPause, .craneBox, .craneResume, .craneMail, .craneLinkedin, .craneInsta, .craneGit"
+                )
+                .forEach((building) => {
+                  building.addEventListener("mouseenter", () => {
+                    if (
+                      buttonTwoAutoplay === true &&
+                      buttonThreePausePlay === false &&
+                      isAutoplayOver === false
+                    ) {
+                      autoplay.pause();
+                      carMove.pause();
+                      document
+                        .querySelector(".roadGrpDiv")
+                        .classList.add("pausedAnimation");
+                      document
+                        .querySelector(".carGrp")
+                        .classList.add("pausedAnimation");
+                      document
+                        .querySelector("#car-back-wheel")
+                        .classList.add("pausedAnimation");
+                      document
+                        .querySelector("#car-front-wheel")
+                        .classList.add("pausedAnimation");
+                    }
+                  });
+
+                  building.addEventListener("mouseleave", () => {
+                    if (
+                      buttonTwoAutoplay === true &&
+                      buttonThreePausePlay === false &&
+                      isAutoplayOver === false
+                    ) {
+                      autoplay.resume();
+                      carMove.resume();
+                      document
+                        .querySelector(".roadGrpDiv")
+                        .classList.remove("pausedAnimation");
+                      document
+                        .querySelector(".carGrp")
+                        .classList.remove("pausedAnimation");
+                      document
+                        .querySelector("#car-back-wheel")
+                        .classList.remove("pausedAnimation");
+                      document
+                        .querySelector("#car-front-wheel")
+                        .classList.remove("pausedAnimation");
+                    }
+                  });
+                });
+            }
+          } else {
+            checker1.checked = true;
+            buttonHoldBox.style.opacity = "1";
+            checker1.dispatchEvent(new Event("change"));
+          }
+        });
+
+        // Event listener for checker3
+        checker3.addEventListener("change", () => {
+          const togglePlayPause = document.querySelector(".togglePlayPause");
+
+          buttonOneScroll = false;
+          buttonTwoAutoplay = false;
+          buttonThreePausePlay = !buttonThreePausePlay;
+          buttonTwoAutoplay = buttonThreePausePlay === false ? true : false;
+
+          // Uncheck the other checkboxes
+          checker1.checked = false;
+
+          checker2.checked = buttonTwoAutoplay;
+          //
+
+          if (buttonThreePausePlay === true) {
+            autoplay.pause();
+            carMove.pause();
+            document
+              .querySelector(".roadGrpDiv")
+              .classList.add("pausedAnimation");
+            document.querySelector(".carGrp").classList.add("pausedAnimation");
+            document
+              .querySelector("#car-back-wheel")
+              .classList.add("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.add("pausedAnimation");
+            togglePlayPause.textContent = "RESUME";
+          } else {
+            autoplay.play();
+            carMove.play();
+            document
+              .querySelector(".roadGrpDiv")
+              .classList.remove("pausedAnimation");
+            document
+              .querySelector(".carGrp")
+              .classList.remove("pausedAnimation");
+            document
+              .querySelector("#car-back-wheel")
+              .classList.remove("pausedAnimation");
+            document
+              .querySelector("#car-front-wheel")
+              .classList.remove("pausedAnimation");
+            togglePlayPause.textContent = "PAUSE";
+          }
+        });
+        // Checker End
+
+        //Audio Start
+        // Initial States
+        const btnSound = document.getElementById("btnSound");
+        const btnTamil = document.getElementById("btnTamil");
+        const btnEnglish = document.getElementById("btnEnglish");
+
+        const tamilAudio = document.getElementById("tamilAudio");
+        const englishAudio = document.getElementById("englishAudio");
+
+        const soundBoxOuter = document.getElementById("soundBoxOuter");
+        const emojiContainer = document.getElementById("emojiContainer");
+
+        let soundEnabled = false;
+
+        // Helper Functions
+        const setRed = (element) => {
+          element.classList.remove("roundGreen");
+          element.classList.add("roundRed");
+        };
+
+        const setGreen = (element) => {
+          element.classList.remove("roundRed");
+          element.classList.add("roundGreen");
+        };
+
+        const musiqEmojiOn = () => {
+          soundBoxOuter.style.animation =
+            "pulseEffect 2s ease-in-out infinite alternate-reverse";
+
+          // Reset the emoji animation by removing and re-adding the class
+          emojiContainer.classList.remove("startAnimation");
+          void emojiContainer.offsetWidth; // Force a reflow to restart the animation
+          emojiContainer.classList.add("startAnimation");
+        };
+
+        const musiqEmojiOff = () => {
+          soundBoxOuter.style.animation = "none"; // Reset the animation
+
+          // Stop the emoji animation
+          emojiContainer.classList.remove("startAnimation");
+        };
+
+        const stopAllAudio = () => {
+          tamilAudio.pause();
+          tamilAudio.currentTime = 0;
+          englishAudio.pause();
+          englishAudio.currentTime = 0;
+          // setRed(btnEnglish);
+          // setRed(btnTamil);
+        };
+
+        const toggleSound = () => {
+          if (btnSound.classList.contains("roundRed")) {
+            // Sound ON
+            setGreen(btnSound);
+
+            musiqEmojiOn();
+            soundEnabled = true;
+            if (btnTamil.classList.contains("roundGreen")) {
+              tamilAudio.play();
+            } else {
+              toggleEnglish();
+              // } else if (btnEnglish.classList.contains("roundGreen")) {
+              // englishAudio.play();
+            }
+          } else {
+            // Sound OFF
+            setRed(btnSound);
+            soundEnabled = false;
+
+            musiqEmojiOff();
+
+            stopAllAudio();
+            setRed(btnEnglish);
+            setRed(btnTamil);
+          }
+        };
+
+        const toggleTamil = () => {
+          // if (btnTamil.classList.contains("roundRed")) {
+          setGreen(btnTamil);
+          setRed(btnEnglish);
+          setGreen(btnSound);
+          musiqEmojiOn();
+          // if (soundEnabled) {
+          stopAllAudio();
+          tamilAudio.play();
+          // }
+          // }
+          // else {
+          //   setRed(btnTamil);
+          //   setGreen(btnEnglish);
+          //   if (soundEnabled) {
+          //     stopAllAudio();
+          //     englishAudio.play();
+          //   }
+          // }
+        };
+
+        const toggleEnglish = () => {
+          // if (btnEnglish.classList.contains("roundRed")) {
+          setGreen(btnEnglish);
+          setRed(btnTamil);
+          setGreen(btnSound);
+          musiqEmojiOn();
+          // if (soundEnabled) {
+          stopAllAudio();
+          englishAudio.play();
+          // }
+          // }
+          // else {
+          //   setRed(btnEnglish);
+          //   setGreen(btnTamil);
+          //   if (soundEnabled) {
+          //     stopAllAudio();
+          //     tamilAudio.play();
+          //   }
+          // }
+        };
+
+        // Event Listeners
+        btnSound.addEventListener("click", toggleSound);
+        btnTamil.addEventListener("click", toggleTamil);
+        btnEnglish.addEventListener("click", toggleEnglish);
+        //Audio End
+      });
+    </script>
+  </head>
+  <body class="grandMaster">
+    <div id="loadingScreen" class="loading-screen">
+      <div class="frontLoader">
+        <div class="svg-container">
+          <svg
+            class="svg-animation"
+            viewBox="0 0 535 478"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <radialGradient
+                id="grad"
+                cx="5%"
+                cy="95%"
+                r="100%"
+                fx="5%"
+                fy="95%"
+              >
+                <stop
+                  offset="0%"
+                  style="
+                    stop-opacity: 1;
+                    animation: rotate-gradient 4s infinite linear;
+                    -webkit-animation: rotate-gradient 4s infinite linear;
+                  "
+                />
+                <stop
+                  offset="25%"
+                  style="
+                    stop-opacity: 1;
+                    animation: rotate-gradient 4s infinite linear;
+                    -webkit-animation: rotate-gradient 4s infinite linear;
+                    animation-delay: 0.2s;
+                    -webkit-animation-delay: 0.2s;
+                  "
+                />
+                <stop
+                  offset="50%"
+                  style="
+                    stop-opacity: 1;
+                    animation: rotate-gradient 4s infinite linear;
+                    -webkit-animation: rotate-gradient 4s infinite linear;
+                    animation-delay: 0.3s;
+                    -webkit-animation-delay: 0.3s;
+                  "
+                />
+                <stop
+                  offset="75%"
+                  style="
+                    stop-opacity: 1;
+                    animation: rotate-gradient 4s infinite linear;
+                    -webkit-animation: rotate-gradient 4s infinite linear;
+                    animation-delay: 0.4s;
+                    -webkit-animation-delay: 0.4s;
+                  "
+                />
+                <stop
+                  offset="100%"
+                  style="
+                    stop-opacity: 1;
+                    animation: rotate-gradient 4s infinite linear;
+                    -webkit-animation: rotate-gradient 4s infinite linear;
+                    animation-delay: 0.5s;
+                    -webkit-animation-delay: 0.5s;
+                  "
+                />
+              </radialGradient>
+            </defs>
+            <path
+              fill="url(#grad)"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M317.659 1.99999C317.659 1.99999 84.2631 132.327 1 476C138.49 340.946 193.655 287.93 234.805 253.564C229.756 262.265 225.573 392.408 231 403C236.427 413.592 277.178 476 277.178 476C277.178 476 263.982 454.566 257.505 382.184C251.028 309.801 265.828 227.513 265.828 227.513C271.214 223.366 283.75 213.51 283.75 213.51C270.75 262.863 271.503 372.348 272.638 382.184C273.773 392.019 289.284 476 289.284 476C337.49 347.044 452.302 155.492 453.478 156.722C454.066 157.337 449.62 151.283 443.325 142.712L443.322 142.709C437.028 134.139 427.809 123.052 421 113.596C428.922 107.488 437.897 101.191 445.959 94.7633L445.963 94.7603C469.856 75.7103 522.455 38.9654 526.873 35.6681C531.292 32.3707 534.008 31.0009 534 30.6552C533.99 30.25 530.971 31.521 525.875 33.9578C498.129 47.2265 408 95.5 408 95.5C404.722 91.8542 402.028 88.3582 399 85C357.569 37.1356 356.333 35.0824 329.25 1.99999C317.191 69.1028 306.441 107.137 287.5 178.5L270.75 193.444L317.659 1.99999ZM300.634 392.776L298.743 384.453C297.716 315.207 311.39 193.295 314.632 191.706C317.875 190.117 367.547 153.385 400.378 129.442L420.185 156.722C366.487 244.91 340.512 297.167 300.634 392.776ZM66 370.787C145.009 291.752 185.456 256.589 216.583 231.95C222.931 226.925 237.514 215.137 237.708 214.053C237.903 212.968 273.458 72.5035 273.458 72.5035C179.884 155.04 138.317 225.837 66 370.787ZM320.307 156.343L386.5 110L344.52 59.1222L333.549 107.165L320.307 156.343Z"
+              stroke="black"
+              style="animation: shadow 5s infinite linear"
+            />
+          </svg>
+        </div>
+        <div class="card">
+          <span> </span>
+        </div>
+        <div class="textBox">
+          <div class="heading">
+            Ashwoq's Portfolio - 2D<span style="font-size: 0.9rem"></span>
+          </div>
+          <div class="dot">&nbsp;.</div>
+          <div class="dot">&nbsp;.</div>
+          <div class="dot">&nbsp;.</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="holdBox"
+      oncontextmenu="return false;"
+      ontouchstart="preventImageDownload(event);"
+    >
+      <div class="holdTxt">Hold here to move the car</div>
+      <button class="holder">
+        <img
+          src="./SVG/peddle.svg"
+          alt="peddle"
+          oncontextmenu="return false;"
+          ontouchstart="preventImageDownload(event);"
+        />
+      </button>
+    </div>
+
+    <div class="oopsBox">
+      <div class="oops">
+        Please turn your phone to <span class="oppsSpan">landscape</span> mode
+        to view the site.
+      </div>
+      <img src="./SVG/nokia.svg" class="nokia" alt="nokia" />
+      <img src="./SVG/arrow.svg" class="arrow" alt="arrow" />
+    </div>
+
+    <div class="periyaBhai" id="content">
+      <div class="antennaBox">
+        <div class="antennaBottom"></div>
+        <div class="antennaLeft"></div>
+        <div class="antennaRight"></div>
+      </div>
+      <div class="leftControlBoxOuter">
+        <div class="leftControlBox">
+          <div class="themeBox">
+            <div class="themeBlack">
+              <div class="themeText">SELECTED <br />TV COLOR</div>
+              <div class="themeCurrent"></div>
+            </div>
+            <div class="themeSelection">
+              <div id="theme1" class="theme1"></div>
+              <div id="theme2" class="theme2"></div>
+              <div id="theme3" class="theme3"></div>
+            </div>
+          </div>
+
+          <div class="controlBox">
+            <div class="controlBoxTxt">CONTROLS</div>
+            <!-- <div class="controlPlay1">Scroll</div>
+            <div class="controlPlay2">Autoplay</div>
+            <div class="controlPlay3">Pause/Resume</div> -->
+
+            <label class="toggler tooltip-container">
+              <div class="toggle-container">
+                <input class="toggle-input checker1" type="checkbox" />
+                <div class="toggle-handle-wrapper">
+                  <div class="toggle-handle">
+                    <div class="toggle-handle-knob"></div>
+                    <div class="toggle-handle-bar-wrapper">
+                      <div class="toggle-handle-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="toggle-base">
+                  <div class="toggle-base-inside"></div>
+                </div>
+              </div>
+              <div class="togglerTxt">MN. SCROLL</div>
+              <div class="tooltip">
+                <span class="tooltip-text"
+                  >It will toggle the Manual Scroll</span
+                >
+              </div>
+              <div class="tooltip-arrow"></div>
+            </label>
+
+            <label class="toggler tooltip-container">
+              <div class="toggle-container">
+                <input class="toggle-input checker2" type="checkbox" />
+                <div class="toggle-handle-wrapper">
+                  <div class="toggle-handle">
+                    <div class="toggle-handle-knob"></div>
+                    <div class="toggle-handle-bar-wrapper">
+                      <div class="toggle-handle-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="toggle-base">
+                  <div class="toggle-base-inside"></div>
+                </div>
+              </div>
+              <div class="togglerTxt">AUTOPLAY</div>
+              <div class="tooltip">
+                <span class="tooltip-text">It will toggle the Auto Scroll</span>
+              </div>
+              <div class="tooltip-arrow"></div>
+            </label>
+
+            <label class="toggler tooltip-container">
+              <div class="toggle-container">
+                <input class="toggle-input checker3" type="checkbox" />
+                <div class="toggle-handle-wrapper">
+                  <div class="toggle-handle">
+                    <div class="toggle-handle-knob"></div>
+                    <div class="toggle-handle-bar-wrapper">
+                      <div class="toggle-handle-bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="toggle-base">
+                  <div class="toggle-base-inside"></div>
+                </div>
+              </div>
+              <div class="togglerTxt togglePlayPause">PAUSE</div>
+              <div class="tooltip">
+                <span class="tooltip-text"
+                  >It's a Play/Pause for Auto Scroll
+                </span>
+              </div>
+              <div class="tooltip-arrow"></div>
+            </label>
+          </div>
+
+          <div class="copyRightsBox">
+            <div class="copyRightsHead">C</div>
+            <div class="copyRightsBlock1">
+              <!-- This website was designed, developed, and animated by me. Apart
+              from four comic style banner images, I created all the designs in
+              Figma from scratch. I own the copyrights entirely; the
+              reference/comic images were designed by Freepik. -->
+
+              <!-- All designs and illustrations on this website were created from
+              scratch by Ashwoq using Figma. While drawing the illustrations, I
+              referred to Freepik for inspiration. Each element reflects my
+              personal style, with unique animations for each building, all
+              tailored to the purpose of this portfolio. -->
+
+              All designs and illustrations on this website were created from
+              scratch using Figma. While drawing the illustrations, Freepik
+              served as an inspiration. Each element is crafted to reflect my
+              personal style, with unique animations for each building, all
+              tailored to the purpose of this portfolio.
+            </div>
+            <div class="copyRightsBlock2">
+              The songs on this website are for educational purposes only😅. I
+              do not own the copyrights, and no monetary gain is made. This
+              usage complies with 'fair use' under the Indian Copyright Act,
+              1957.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mainScreenBoxOuter">
+        <!-- <img src="./IMG/Sky.webp" style="display: none;" alt="hidden"> -->
+        <div class="mainScreenBox">
+          <div class="scroll-container">
+            <div class="buildings">
+              <img
+                src="./IMG/Building - 1.png"
+                class="building building7vw"
+                data-info="Building 1 info"
+              />
+              <!-- style="height: 7vw" -->
+              <img
+                src="./IMG/Building Portfolio - 2.png"
+                class="building building10vw"
+                data-info="Building 2 info"
+              />
+              <!-- style="height: 10vw" -->
+              <img
+                src="./IMG/Building OSCORP - 3.png"
+                class="building building15vw"
+                data-info="Building 3 info"
+              />
+              <!-- style="height: 15vw" -->
+              <div class="buildingBox">
+                <img
+                  src="./IMG/Ashwoq/Building ASHWOQ - 4.png"
+                  class="building buildingHover whiter building20vw"
+                  data-info="Building 4 info"
+                />
+                <!-- style="height: 20vw" -->
+                <img class="pss" src="./IMG/Ashwoq/pss.png" alt="pss" />
+
+                <img
+                  src="./IMG/Ashwoq/ashwoqText.png"
+                  class="ashwoqText"
+                  alt="ashwoqText.png"
+                />
+                <img
+                  src="./IMG/Ashwoq/ashwoqDev.png"
+                  class="ashwoqDev"
+                  alt="ashwoqDev.png"
+                />
+              </div>
+              <img
+                src="./IMG/Building - 5.png"
+                class="building building6vw"
+                data-info="Building 5 info"
+              />
+              <!-- style="height: 6vw" -->
+              <!-- <img
+                src="./IMG/Building - 6.png"
+                class="building"
+                style="height: 9vw"
+                data-info="Building 6 info"
+              /> -->
+              <img
+                src="./IMG/Building SKILLS - 7.png"
+                class="building buildingHover building20vw"
+                data-info="Building 7 info"
+              />
+              <!-- style="height: 20vw" -->
+              <img
+                src="./IMG/Building - 8.png"
+                class="building building13vw"
+                data-info="Building 8 info"
+              />
+              <!-- style="height: 13vw" -->
+              <img
+                src="./IMG/Building WORKS - 9.png"
+                class="building building13vw"
+                data-info="Building 9 info"
+              />
+              <!-- style="height: 13vw" -->
+              <div class="buildingBox">
+                <img
+                  src="./IMG/mugavari/Building MUGAVARI - 10.png"
+                  class="building buildingHover building22vw"
+                  data-info="Building 10 info"
+                />
+                <!-- style="height: 22vw" -->
+                <div class="mugavariBox">
+                  <img
+                    class="mugavariLink linkerPause"
+                    src="./IMG/Mugavari/mugavariLink.png"
+                    alt="mugavariLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://mugavari-foundations-gen-2.web.app/', '_blank');"
+                  />
+                  <img
+                    class="mugavariFirst"
+                    src="./IMG/Mugavari/mugavariFirst.png"
+                    alt="mugavariFirst"
+                  />
+                  <img
+                    class="mugavariFront"
+                    src="./IMG/Mugavari/mugavariFront.png"
+                    alt="mugavariFront"
+                  />
+                  <img
+                    class="mugavariTools"
+                    src="./IMG/Mugavari/mugavariTools.png"
+                    alt="mugavariTools"
+                  />
+                </div>
+              </div>
+              <img
+                src="./IMG/Building - 11.png"
+                class="building building10vw"
+                data-info="Building 11 info"
+              />
+              <!-- style="height: 10vw" -->
+
+              <div class="buildingBox">
+                <img
+                  src="./IMG/sri/Building SRI - 12.png"
+                  class="building buildingHover bluish"
+                  data-info="Building 12 info"
+                />
+                <div class="sriBox">
+                  <img
+                    class="sriPart"
+                    src="./IMG/sri/partFrontend.png"
+                    alt="sriPart"
+                  />
+                  <img
+                    class="sriTools"
+                    src="./IMG/sri/reactSquare.png"
+                    alt="sriTools"
+                  />
+                </div>
+              </div>
+              <img
+                src="./IMG/Building - 13.png"
+                class="building building9vw"
+                data-info="Building 13 info"
+              />
+              <!-- style="height: 9vw" -->
+              <div class="buildingBox">
+                <img
+                  src="./IMG/portal/Building PORTAL - 14.png"
+                  class="building buildingHover purplish building19vw"
+                  data-info="Building 14 info"
+                />
+                <!-- style="height: 19vw" -->
+                <div class="portalBox">
+                  <img
+                    class="portalLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://portal-v4.vercel.app/', '_blank');"
+                    src="./IMG/portal/link.png"
+                    alt="portalLink linkerPause"
+                  />
+                  <img
+                    class="portalTools"
+                    src="./IMG/portal/tools.png"
+                    alt="portalTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/amazon/Building AMAZON - 15.png"
+                  class="building buildingHover orangish building22vw"
+                  data-info="Building 15 info"
+                />
+                <!-- style="height: 22vw" -->
+                <div class="amazonBox">
+                  <img
+                    class="amazonLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://mugavarifoundations.com/', '_blank');"
+                    src="./IMG/amazon/link.png"
+                    alt="amazonLink linkerPause"
+                  />
+                  <img
+                    class="amazonDeveloped"
+                    src="./IMG/amazon/developed.png"
+                    alt="amazonDeveloped"
+                  />
+                  <img
+                    class="amazonTools"
+                    src="./IMG/amazon/tools.png"
+                    alt="amazonTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/EC/Building EC - 16.png"
+                  class="building buildingHover greenish"
+                  data-info="Building 16 info"
+                />
+                <div class="ecBox">
+                  <img
+                    class="ecLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://e-commerce-ashwoq.firebaseapp.com/', '_blank');"
+                    src="./IMG/EC/link.png"
+                    alt="ecLink linkerPause"
+                  />
+                  <img
+                    class="ecDeveloped"
+                    src="./IMG/EC/developed.png"
+                    alt="ecDeveloped"
+                  />
+                  <img class="ecTools" src="./IMG/EC/tools.png" alt="ecTools" />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/space/Building SPACE - 17.png"
+                  class="building buildingHover blugasm building20vw"
+                  data-info="Building 17 info"
+                />
+                <!-- style="height: 20vw" -->
+                <div class="spaceBox">
+                  <img
+                    class="spaceLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://www.linkedin.com/posts/ashwoq-dedath-s-8636ab203_3dmodeling-blender-threejs-activity-7213405979269373952-kIe-?utm_source=social_share_send&utm_medium=member_desktop_web', '_blank');"
+                    src="./IMG/space/link.png"
+                    alt="spaceLink linkerPause"
+                  />
+
+                  <img
+                    class="spaceTools"
+                    src="./IMG/space/tools.png"
+                    alt="spaceTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/GameBoy/Building GAMEBOY - 18.png"
+                  class="building buildingHover gamegasm building21vw"
+                  data-info="Building 18 info"
+                />
+                <!-- style="height: 21vw" -->
+                <div class="gameBoyBox">
+                  <img
+                    class="gameBoyLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://gameboy-ad.web.app/', '_blank');"
+                    src="./IMG/GameBoy/link.png"
+                    alt="gameBoyLink linkerPause"
+                  />
+                  <img
+                    class="gameBoyTools"
+                    src="./IMG/GameBoy/tools.png"
+                    alt="gameBoyTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/WoWHR/Building WOWHR - 19.png"
+                  class="building buildingHover wowgasm building22vw"
+                  data-info="Building 19 info"
+                />
+                <!-- style="height: 22vw" -->
+                <div class="wowHRBox">
+                  <img
+                    class="wowHRLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="
+    window.open('https://wowhr-com.web.app/', '_blank');
+    window.open('https://wowhr.in/', '_blank');
+  "
+                    src="./IMG/WoWHR/link.png"
+                    alt="ecwowHRLink linkerPause"
+                  />
+                  <img
+                    class="wowHRDeveloped"
+                    src="./IMG/WoWHR/developed.png"
+                    alt="wowHRDeveloped"
+                  />
+
+                  <img
+                    class="wowHRTools"
+                    src="./IMG/WoWHR/tools.png"
+                    alt="wowHRTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/Reltime/Building Reltime - 20.png"
+                  class="building buildingHover relgasm building19vw"
+                  data-info="Building 20 info"
+                />
+                <!-- style="height: 19vw" -->
+                <div class="reltimeBox">
+                  <img
+                    class="reltimeLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://fjord.estate/', '_blank');"
+                    src="./IMG/Reltime/link.png"
+                    alt="reltimeLink linkerPause"
+                  />
+                  <img
+                    class="reltimeDeveloped"
+                    src="./IMG/Reltime/developed.png"
+                    alt="reltimeDeveloped"
+                  />
+
+                  <img
+                    class="reltimeTools"
+                    src="./IMG/Reltime/tools.png"
+                    alt="reltimeTools"
+                  />
+                </div>
+              </div>
+              <div class="buildingBox">
+                <img
+                  src="./IMG/swifin/Building SWIFIN - 21.png"
+                  class="building buildingHover swifingasm"
+                  data-info="Building 21 info"
+                />
+                <div class="swifinBox">
+                  <img
+                    class="swifinLink linkerPause"
+                    title="Click here to see the project"
+                    onclick="window.open('https://kogox.com/', '_blank');"
+                    src="./IMG/swifin/link.png"
+                    alt="swifinLink linkerPause"
+                  />
+                  <img
+                    class="swifinDeveloped"
+                    src="./IMG/swifin/developed.png"
+                    alt="swifinDeveloped"
+                  />
+
+                  <img
+                    class="swifinTools"
+                    src="./IMG/swifin/tools.png"
+                    alt="swifinTools"
+                  />
+                </div>
+              </div>
+              <img
+                src="./IMG/Building CONTACT - 22.png"
+                class="building building15vw"
+                data-info="Building 22 info"
+              />
+              <!-- style="height: 15vw" -->
+              <div class="buildingBox cranegasm">
+                <img
+                  src="./IMG/Crane/Building CRANE - 23.png"
+                  class="building buildingHover building20vw"
+                  data-info="Building 23 info"
+                />
+                <!-- style="height: 20vw" -->
+                <div class="craneBox">
+                  <img
+                    src="./IMG/Crane/git.png"
+                    class="craneGit"
+                    onclick="window.open('https://github.com/Ashwoq/', '_blank');"
+                  />
+                  <img
+                    src="./IMG/Crane/twitter.png"
+                    class="craneInsta"
+                    onclick="window.open('https://www.x.com/ashwoq_s/', '_blank');"
+                  />
+                  <!-- <img src="./IMG/Crane/insta.png" class="craneInsta"
+                  onclick="window.open('https://www.instagram.com/ashwoq_s_/', '_blank');" /> -->
+                  <img
+                    src="./IMG/Crane/linkedin.png"
+                    class="craneLinkedin"
+                    onclick="window.open('https://www.linkedin.com/in/ashwoq-dedath-s-8636ab203/', '_blank');"
+                  />
+                  <img
+                    src="./IMG/Crane/mail.png"
+                    class="craneMail"
+                    onclick="window.open('mailto:ashwoqdedath.s@gmail.com');"
+                  />
+                  <a href="/AshwoqS_Resume.pdf" download="AshwoqS_Resume.pdf">
+                    <img src="./IMG/Crane/resume.png" class="craneResume"
+                  /></a>
+                </div>
+              </div>
+              <img
+                src="./IMG/Building END - 24.png"
+                class="building building12vw"
+                data-info="Building 24 info"
+              />
+              <!-- style="height: 12vw" -->
+            </div>
+          </div>
+
+          <div class="bottomScreenBox">
+            <div class="roadGrpDiv"></div>
+            <div class="carGrp">
+              <div class="carDiv"></div>
+              <div class="carWheelGrp">
+                <div class="carBackWheel">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="car-back-wheel">
+                      <path
+                        d="M54 27C54 41.9117 41.9117 54 27 54C12.0883 54 0 41.9117 0 27C0 12.0883 12.0883 0 27 0C41.9117 0 54 12.0883 54 27Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M37.0314 26.6403C37.153 22.1079 35.2076 13.1986 26.4528 13.8201C21.32 14.1846 18.7785 17.5047 17.6522 21.1029C18.0656 19.7989 19.1134 17.7438 20.2516 19.259C21.4189 20.8129 24.1426 21.2014 25.3585 21.2014C25.8449 21.0719 27.1094 21.2791 28.2767 23.1439C29.444 25.0086 31.9245 24.4388 33.0189 23.9209C33.5038 23.5324 34.6934 23.2993 35.5723 25.4748C36.4513 27.6504 36.9113 27.1583 37.0314 26.6403Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M16.9686 28.1942C17.3333 30.6547 19.7409 35.8863 26.4528 37.1295C29.2232 37.6426 31.3845 36.6291 33.0189 34.9795C35.3443 32.6325 36.603 28.9978 37.0314 26.6403C36.9113 27.1583 36.4513 27.6504 35.5723 25.4748C34.6934 23.2993 33.5038 23.5324 33.0189 23.9209C31.9245 24.4388 29.444 25.0086 28.2767 23.1439C27.1094 21.2791 25.8449 21.0719 25.3585 21.2014C24.1426 21.2014 21.4189 20.8129 20.2516 19.259C19.1134 17.7438 18.0656 19.7989 17.6522 21.1029C17.6419 21.1357 17.6318 21.1686 17.6217 21.2014C16.8552 23.7109 16.7699 26.3434 16.9686 28.1942Z"
+                        fill="#009788"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M50.5 26C50.5 42.3063 43.5879 52 28.2767 52C12.9656 52 2.5 45.666 2.5 29.3597C2.5 13.0534 11.6889 2.5 27 2.5C42.3111 2.5 50.5 9.69369 50.5 26ZM28.2767 51.1151C9.89182 53.6014 4.32285 37.6475 3.83648 29.3597C3.52551 26.6403 5.66038 4.10791 26.4528 4.10791C43.0868 4.10791 48.4612 16.7986 49.0692 23.1439C49.5613 28.7345 48.294 38.3793 41.7736 44.8279C38.628 47.9389 34.2598 50.306 28.2767 51.1151Z"
+                        fill="#080707"
+                      />
+                      <path
+                        d="M26.4528 37.1295C19.7409 35.8863 17.3333 30.6547 16.9686 28.1942C17.6981 33.7626 21.7107 43.3453 31.9245 37.1295L33.0189 34.9795C31.3845 36.6291 29.2232 37.6426 26.4528 37.1295Z"
+                        fill="black"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.83648 29.3597C5.05241 26.5108 7.92201 21.1237 9.67296 22.3669C10.7711 23.1466 10.6755 24.3174 10.584 25.4378C10.4931 26.5505 10.4063 27.6135 11.4969 28.1942C13.2074 29.1051 13.6124 28.6071 13.6047 28.2214C13.6043 28.2123 13.6039 28.2033 13.6035 28.1942C13.3139 21.7064 15.4705 10.6161 26.4528 10.3237C34.8899 10.0991 39.0074 15.8143 40.7337 21.1029C41.6883 21.1357 43.6704 21.7453 43.9623 23.9209C44.2541 26.0964 46.2725 27.6763 47.2453 28.1942C47.3669 31.0432 47.0264 37.2072 44.6918 39.0719C42.3572 40.9367 41.7736 43.6862 41.7736 44.8279C48.294 38.3793 49.5613 28.7345 49.0692 23.1439C48.4612 16.7986 43.0868 4.10791 26.4528 4.10791C5.66038 4.10791 3.52551 26.6403 3.83648 29.3597Z"
+                        fill="#B8B7B7"
+                      />
+                      <path
+                        d="M41.7736 26.6403C41.652 31.1727 38.7824 40.7036 28.2767 42.5683C17.7711 44.4331 14.1719 34.5396 13.6855 29.3597C13.6504 29.0001 13.6229 28.6195 13.6047 28.2214C13.6124 28.6071 13.2074 29.1051 11.4969 28.1942C10.4063 27.6135 10.4931 26.5505 10.584 25.4378C10.6755 24.3174 10.7711 23.1466 9.67296 22.3669C7.92201 21.1237 5.05241 26.5108 3.83648 29.3597C4.32285 37.6475 9.89182 53.6014 28.2767 51.1151C34.2598 50.306 38.628 47.9389 41.7736 44.8279C41.7736 43.6862 42.3572 40.9367 44.6918 39.0719C47.0264 37.2072 47.3669 31.0432 47.2453 28.1942C46.2725 27.6763 44.2541 26.0964 43.9623 23.9209C43.6704 21.7453 41.6883 21.1357 40.7337 21.1029C41.3958 23.1312 41.7062 25.0967 41.7736 26.6403Z"
+                        fill="#939191"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M41.7736 26.6403C41.7062 25.0967 41.3958 23.1312 40.7337 21.1029C39.4996 18.4163 34.9157 12.7324 26.4528 11.4892C17.9899 10.246 15.3878 22.1079 15.1447 28.1942C15.8742 33.5036 19.522 43.8115 28.2767 42.5683C38.7824 40.7036 41.652 31.1727 41.7736 26.6403ZM37.0314 26.6403C37.153 22.1079 35.2076 13.1986 26.4528 13.8201C21.32 14.1846 18.7785 17.5047 17.6522 21.1029C17.6419 21.1357 17.6318 21.1686 17.6217 21.2014C16.8552 23.7109 16.7699 26.3434 16.9686 28.1942C17.6981 33.7626 21.7107 43.3453 31.9245 37.1295L33.0189 34.9795C35.3443 32.6325 36.603 28.9978 37.0314 26.6403Z"
+                        fill="#FF0000"
+                      />
+                      <path
+                        d="M13.6855 29.3597C14.1719 34.5396 17.7711 44.4331 28.2767 42.5683C19.522 43.8115 15.8742 33.5036 15.1447 28.1942C15.3878 22.1079 17.9899 10.246 26.4528 11.4892C34.9157 12.7324 39.4996 18.4163 40.7337 21.1029C39.0074 15.8143 34.8899 10.0991 26.4528 10.3237C15.4705 10.6161 13.3139 21.7064 13.6035 28.1942L13.6047 28.2214C13.6229 28.6195 13.6504 29.0001 13.6855 29.3597Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M14.1833 29.313L14.1832 29.311C14.1489 28.9603 14.122 28.5883 14.1042 28.1985L14.103 28.1719C13.9605 24.9794 14.4236 20.6812 16.2451 17.1657C17.3615 15.0111 18.9858 13.1499 21.3119 12.0098C21.1575 12.1054 21.0063 12.2065 20.8582 12.3129C19.3301 13.41 18.1577 15.0447 17.2668 16.8743C15.4872 20.5289 14.7682 25.091 14.6451 28.1743L14.6433 28.2185L14.6493 28.2623C15.021 30.967 16.1341 34.9517 18.2878 38.1196C19.1176 39.3402 20.1097 40.4486 21.2789 41.3141C19.792 40.5933 18.587 39.5287 17.6167 38.2964C15.4197 35.5062 14.4206 31.8393 14.1833 29.313ZM13.1034 28.2025C13.1032 28.2025 13.1031 28.2025 13.103 28.2026C12.9659 28.2283 12.5681 28.1982 11.7319 27.7529C11.3296 27.5387 11.1615 27.2588 11.0861 26.9098C11.0015 26.519 11.0353 26.0544 11.0823 25.4785C11.0842 25.4553 11.0861 25.432 11.0881 25.4085C11.1756 24.3449 11.2942 22.9048 9.96242 21.9592C9.26939 21.4672 8.51238 21.6999 7.9062 22.1251C7.29995 22.5503 6.6991 23.2534 6.1451 24.0412C5.52533 24.9225 4.9299 25.96 4.41758 26.9553C4.49464 26.2115 4.61851 25.334 4.8061 24.3616C5.28076 21.9012 6.15521 18.8778 7.67485 15.944C10.7047 10.0947 16.2866 4.60791 26.4528 4.60791C34.626 4.60791 39.9917 7.7187 43.3958 11.5772C46.8143 15.4519 48.2754 20.1059 48.5713 23.1895C48.8301 26.1325 48.5912 30.2048 47.3413 34.321C47.3555 34.2427 47.3692 34.1643 47.3826 34.0859C47.7515 31.9135 47.8068 29.6241 47.7448 28.1729L47.7326 27.8873L47.4803 27.7529C47.0418 27.5194 46.3407 27.0298 45.719 26.3435C45.097 25.6567 44.5857 24.808 44.4578 23.8544C44.2902 22.605 43.6275 21.788 42.8713 21.2906C42.276 20.899 41.6244 20.7049 41.1041 20.634C40.2106 18.0299 38.7358 15.3285 36.4436 13.2736C34.0484 11.1262 30.7855 9.7082 26.4395 9.82391C20.739 9.97569 17.3033 12.9499 15.3572 16.7057C13.43 20.4251 12.9582 24.9085 13.1034 28.2025ZM35.7761 14.0182C36.6485 14.8003 37.3979 15.6877 38.0374 16.6343C35.5717 14.2054 31.7734 11.7654 26.5255 10.9945C26.1058 10.9329 25.699 10.9016 25.3047 10.8988C25.6798 10.8595 26.0668 10.8342 26.4661 10.8236C30.5573 10.7146 33.5717 12.0419 35.7761 14.0182ZM41.448 21.7276C41.7318 21.8104 42.0369 21.9387 42.3218 22.1261C42.8683 22.4856 43.3425 23.0612 43.4667 23.9873C43.6306 25.2093 44.2745 26.2382 44.9778 27.0148C45.5769 27.6761 46.2416 28.1798 46.7557 28.4905C46.7973 29.8934 46.7288 31.9625 46.3967 33.9184C46.2194 34.9623 45.9696 35.9586 45.6294 36.7985C45.2867 37.6446 44.8687 38.2907 44.3798 38.6813C42.0287 40.5592 41.3459 43.2686 41.2792 44.6123C38.2244 47.5754 33.9987 49.8367 28.2097 50.6196C19.1967 51.8385 13.3805 48.5462 9.73589 43.9664C6.10122 39.3991 4.60334 33.5167 4.34282 29.4477C4.94827 28.0458 5.92966 26.0859 6.96308 24.6164C7.49734 23.8567 8.01818 23.268 8.48044 22.9438C8.94276 22.6195 9.20106 22.6451 9.3835 22.7746C10.2185 23.3674 10.1813 24.2259 10.0856 25.3971L10.0825 25.4355C10.0393 25.9635 9.98958 26.5706 10.1087 27.1212C10.2397 27.7271 10.5736 28.2691 11.2618 28.6356C12.0677 29.0647 12.6915 29.2481 13.1688 29.2021C13.1748 29.2712 13.1812 29.3396 13.1878 29.4074C13.4371 32.0609 14.4808 35.9301 16.8311 38.9151C19.2069 41.9324 22.9113 44.0285 28.3641 43.0606C33.7709 42.1009 37.2284 39.1593 39.3398 35.8751C41.4415 32.6057 42.2105 28.9982 42.2734 26.6537L42.2739 26.6361L42.2731 26.6185C42.2125 25.2307 41.9618 23.5202 41.448 21.7276ZM3.82421 24.1721C3.34217 26.6708 3.2546 28.6378 3.33812 29.4022C3.58792 33.6171 5.12486 39.7781 8.95342 44.589C10.0215 45.9311 11.2661 47.1655 12.7064 48.2219C11.7231 47.6862 10.8058 47.0812 9.95891 46.4042C5.57377 42.8984 3 37.3984 3 29.3597C3 21.2977 5.27085 14.7129 9.37988 10.1496C13.4832 5.59265 19.4655 3 27 3C34.5861 3 40.3118 4.78263 44.1438 8.49428C47.9728 12.203 50 17.9244 50 26C50 34.094 48.2828 40.4617 44.7427 44.7987C41.357 48.9464 36.2446 51.3084 29.1621 51.4888C34.833 50.5669 39.0457 48.2289 42.1252 45.1834C48.7917 38.5903 50.0665 28.7713 49.5673 23.1L49.5669 23.0962C49.2544 19.8344 47.7241 14.9716 44.1457 10.9156C40.5522 6.84245 34.9136 3.60791 26.4528 3.60791C15.8266 3.60791 9.94488 9.38732 6.7869 15.4841C5.21264 18.5233 4.31214 21.6429 3.82421 24.1721ZM45.3685 39.1277C44.5883 40.5912 43.6443 42.003 42.5111 43.3093C42.842 42.1158 43.5699 40.608 45.0039 39.4626C45.1316 39.3606 45.2531 39.2485 45.3685 39.1277ZM38.4986 35.3343C36.5194 38.413 33.2918 41.1679 28.1979 42.0745C24.0774 42.6561 21.1451 40.5439 19.1148 37.5574C17.0849 34.5715 16.01 30.7736 15.6461 28.1699C15.7712 25.1679 16.4762 20.782 18.1659 17.3121C19.0138 15.5708 20.0939 14.0927 21.4415 13.1252C22.7758 12.1671 24.395 11.6923 26.3802 11.9839C34.6202 13.1943 39.0734 18.7142 40.2674 21.2857C40.9064 23.2523 41.2065 25.1547 41.2733 26.6444C41.2112 28.833 40.4832 32.2472 38.4986 35.3343ZM16.4714 28.2476L16.4713 28.2476L16.4728 28.2592C16.8439 31.0916 18.0533 35.0104 20.5407 37.4387C21.7975 38.6657 23.3883 39.518 25.3508 39.6378C27.3055 39.757 29.5724 39.1463 32.1845 37.5566L32.3057 37.4828L32.3701 37.3563L33.4295 35.2751C35.8189 32.8264 37.0893 29.1183 37.5234 26.7297L37.5302 26.692L37.5313 26.6537C37.5936 24.3285 37.1296 20.8684 35.504 18.0478C34.6874 16.6311 33.57 15.3628 32.0671 14.4912C30.5606 13.6175 28.696 13.1596 26.4174 13.3214C23.7414 13.5114 21.7135 14.4768 20.2086 15.8836C18.7108 17.2838 17.7561 19.0973 17.1751 20.9535C17.1644 20.9874 17.1539 21.0214 17.1435 21.0554C16.3538 23.6407 16.267 26.3426 16.4714 28.2476ZM26.3618 37.6211C28.386 37.9961 30.1104 37.6038 31.5503 36.7625L31.5438 36.7753C29.103 38.2374 27.0774 38.7413 25.4117 38.6396C23.7265 38.5368 22.3534 37.8109 21.2392 36.7232C20.3448 35.85 19.6224 34.7477 19.0538 33.5648C20.607 35.3656 22.953 36.9898 26.3618 37.6211ZM26.5439 36.6379C20.1041 35.4451 17.8118 30.4429 17.4646 28.1307C17.2732 26.3346 17.3579 23.7766 18.0999 21.3475C18.1095 21.3161 18.1192 21.2848 18.129 21.2534C18.33 20.6195 18.6681 19.8685 19.0452 19.4653C19.2338 19.2637 19.3611 19.2245 19.4233 19.2245C19.4674 19.2245 19.6157 19.2449 19.8518 19.5593C20.5298 20.4619 21.624 20.9885 22.6441 21.2922C23.6749 21.599 24.7084 21.7014 25.3585 21.7014H25.4239L25.4871 21.6846C25.6876 21.6312 26.7556 21.6562 27.8529 23.4092C28.551 24.5243 29.6459 24.8966 30.6608 24.9257C31.661 24.9544 32.6333 24.6565 33.2328 24.3728L33.2858 24.3477L33.3315 24.3111C33.4689 24.201 33.7097 24.1119 33.9815 24.2078C34.2583 24.3055 34.6959 24.6402 35.1087 25.6621C35.3349 26.2219 35.5434 26.6341 35.7388 26.9258C35.9034 27.1715 36.0968 27.3907 36.3351 27.504C35.7843 29.7505 34.6008 32.6724 32.6637 34.6276C31.1213 36.1844 29.12 37.115 26.5439 36.6379ZM20.6513 18.9587C20.3442 18.5498 19.9718 18.2706 19.5349 18.2297C19.923 17.6434 20.3728 17.099 20.8915 16.6141C22.2222 15.3702 24.0314 14.4933 26.4882 14.3189C28.587 14.1699 30.2487 14.5926 31.5654 15.3562C32.8857 16.1219 33.8886 17.2477 34.6376 18.5472C36.0742 21.0398 36.5478 24.1237 36.5365 26.3185C36.4004 26.1043 36.233 25.7752 36.0359 25.2875C35.5698 24.1339 34.9732 23.4974 34.3142 23.2648C33.6827 23.042 33.1121 23.2317 32.7589 23.4904C32.2605 23.7179 31.4704 23.9485 30.6895 23.9261C29.8988 23.9034 29.1698 23.6282 28.7005 22.8786C27.501 20.9623 26.091 20.5379 25.3024 20.7011C24.732 20.6953 23.8264 20.6007 22.9294 20.3337C21.9919 20.0547 21.1406 19.6101 20.6513 18.9587ZM53.5 27C53.5 41.6355 41.6355 53.5 27 53.5C21.8494 53.5 17.042 52.0306 12.9742 49.4881C17.1838 51.5749 22.4001 52.5 28.2767 52.5C36.0441 52.5 41.7587 50.0358 45.5174 45.431C49.2611 40.8446 51 34.2123 51 26C51 17.7693 48.9328 11.7407 44.8395 7.77599C40.7493 3.81422 34.7251 2 27 2C19.2234 2 12.9557 4.68405 8.63676 9.48041C4.32358 14.2704 2 21.1154 2 29.3597C2 33.5869 2.69515 37.1744 3.99954 40.1707C1.77305 36.2909 0.5 31.7941 0.5 27C0.5 12.3645 12.3645 0.5 27 0.5C41.6355 0.5 53.5 12.3645 53.5 27Z"
+                        stroke="black"
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div class="carFrontWheel">
+                  <svg
+                    width="54"
+                    height="54"
+                    viewBox="0 0 54 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="car-front-wheel">
+                      <path
+                        d="M0 27C0 41.9117 12.0883 54 27 54C41.9117 54 54 41.9117 54 27C54 12.0883 41.9117 0 27 0C12.0883 0 0 12.0883 0 27Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M16.9686 26.6403C16.847 22.1079 18.7924 13.1986 27.5472 13.8201C32.68 14.1846 35.2215 17.5047 36.3478 21.1029C35.9344 19.7989 34.8866 17.7438 33.7484 19.259C32.5811 20.8129 29.8574 21.2014 28.6415 21.2014C28.1551 21.0719 26.8906 21.2791 25.7233 23.1439C24.556 25.0086 22.0755 24.4388 20.9811 23.9209C20.4962 23.5324 19.3066 23.2993 18.4277 25.4748C17.5487 27.6504 17.0887 27.1583 16.9686 26.6403Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M37.0314 28.1942C36.6667 30.6547 34.2591 35.8863 27.5472 37.1295C24.7768 37.6426 22.6155 36.6291 20.9811 34.9795C18.6557 32.6325 17.397 28.9978 16.9686 26.6403C17.0887 27.1583 17.5487 27.6504 18.4277 25.4748C19.3066 23.2993 20.4962 23.5324 20.9811 23.9209C22.0755 24.4388 24.556 25.0086 25.7233 23.1439C26.8906 21.2791 28.1551 21.0719 28.6415 21.2014C29.8574 21.2014 32.5811 20.8129 33.7484 19.259C34.8866 17.7438 35.9344 19.7989 36.3478 21.1029C36.3581 21.1357 36.3682 21.1686 36.3783 21.2014C37.1448 23.7109 37.2301 26.3434 37.0314 28.1942Z"
+                        fill="#009788"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.5 26C3.5 42.3063 10.4121 52 25.7233 52C41.0344 52 51.5 45.666 51.5 29.3597C51.5 13.0534 42.3111 2.5 27 2.5C11.6889 2.5 3.5 9.69369 3.5 26ZM25.7233 51.1151C44.1082 53.6014 49.6771 37.6475 50.1635 29.3597C50.4745 26.6403 48.3396 4.10791 27.5472 4.10791C10.9132 4.10791 5.53878 16.7986 4.93081 23.1439C4.43867 28.7345 5.70604 38.3793 12.2264 44.8279C15.372 47.9389 19.7402 50.306 25.7233 51.1151Z"
+                        fill="#080707"
+                      />
+                      <path
+                        d="M27.5472 37.1295C34.2591 35.8863 36.6667 30.6547 37.0314 28.1942C36.3019 33.7626 32.2893 43.3453 22.0755 37.1295L20.9811 34.9795C22.6155 36.6291 24.7768 37.6426 27.5472 37.1295Z"
+                        fill="black"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M50.1635 29.3597C48.9476 26.5108 46.078 21.1237 44.327 22.3669C43.2289 23.1466 43.3245 24.3174 43.416 25.4378C43.5069 26.5505 43.5937 27.6135 42.5031 28.1942C40.7926 29.1051 40.3876 28.6071 40.3953 28.2214C40.3957 28.2123 40.3961 28.2033 40.3965 28.1942C40.6861 21.7064 38.5295 10.6161 27.5472 10.3237C19.1101 10.0991 14.9926 15.8143 13.2663 21.1029C12.3117 21.1357 10.3296 21.7453 10.0377 23.9209C9.74591 26.0964 7.72746 27.6763 6.75471 28.1942C6.63312 31.0432 6.97358 37.2072 9.30817 39.0719C11.6428 40.9367 12.2264 43.6862 12.2264 44.8279C5.70604 38.3793 4.43867 28.7345 4.93081 23.1439C5.53878 16.7986 10.9132 4.10791 27.5472 4.10791C48.3396 4.10791 50.4745 26.6403 50.1635 29.3597Z"
+                        fill="#B8B7B7"
+                      />
+                      <path
+                        d="M12.2264 26.6403C12.348 31.1727 15.2176 40.7036 25.7233 42.5683C36.2289 44.4331 39.8281 34.5396 40.3145 29.3597C40.3496 29.0001 40.3771 28.6195 40.3953 28.2214C40.3876 28.6071 40.7926 29.1051 42.5031 28.1942C43.5937 27.6135 43.5069 26.5505 43.416 25.4378C43.3245 24.3174 43.2289 23.1466 44.327 22.3669C46.078 21.1237 48.9476 26.5108 50.1635 29.3597C49.6771 37.6475 44.1082 53.6014 25.7233 51.1151C19.7402 50.306 15.372 47.9389 12.2264 44.8279C12.2264 43.6862 11.6428 40.9367 9.30817 39.0719C6.97358 37.2072 6.63312 31.0432 6.75471 28.1942C7.72746 27.6763 9.74591 26.0964 10.0377 23.9209C10.3296 21.7453 12.3117 21.1357 13.2663 21.1029C12.6042 23.1312 12.2938 25.0967 12.2264 26.6403Z"
+                        fill="#939191"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M12.2264 26.6403C12.2938 25.0967 12.6042 23.1312 13.2663 21.1029C14.5004 18.4163 19.0843 12.7324 27.5472 11.4892C36.0101 10.246 38.6122 22.1079 38.8553 28.1942C38.1258 33.5036 34.478 43.8115 25.7233 42.5683C15.2176 40.7036 12.348 31.1727 12.2264 26.6403ZM16.9686 26.6403C16.847 22.1079 18.7924 13.1986 27.5472 13.8201C32.68 14.1846 35.2215 17.5047 36.3478 21.1029C36.3581 21.1357 36.3682 21.1686 36.3783 21.2014C37.1448 23.7109 37.2301 26.3434 37.0314 28.1942C36.3019 33.7626 32.2893 43.3453 22.0755 37.1295L20.9811 34.9795C18.6557 32.6325 17.397 28.9978 16.9686 26.6403Z"
+                        fill="#FF0000"
+                      />
+                      <path
+                        d="M40.3145 29.3597C39.8281 34.5396 36.2289 44.4331 25.7233 42.5683C34.478 43.8115 38.1258 33.5036 38.8553 28.1942C38.6122 22.1079 36.0101 10.246 27.5472 11.4892C19.0843 12.7324 14.5004 18.4163 13.2663 21.1029C14.9926 15.8143 19.1101 10.0991 27.5472 10.3237C38.5295 10.6161 40.6861 21.7064 40.3965 28.1942L40.3953 28.2214C40.3771 28.6195 40.3496 29.0001 40.3145 29.3597Z"
+                        fill="black"
+                      />
+                      <path
+                        d="M39.8167 29.313L39.8168 29.311C39.8511 28.9603 39.878 28.5883 39.8958 28.1985L39.897 28.1719C40.0395 24.9794 39.5764 20.6812 37.7549 17.1657C36.6385 15.0111 35.0142 13.1499 32.6881 12.0098C32.8425 12.1054 32.9937 12.2065 33.1418 12.3129C34.6699 13.41 35.8423 15.0447 36.7332 16.8743C38.5128 20.5289 39.2318 25.091 39.3549 28.1743L39.3567 28.2185L39.3507 28.2623C38.979 30.967 37.8659 34.9517 35.7122 38.1196C34.8824 39.3402 33.8903 40.4486 32.7211 41.3141C34.208 40.5933 35.413 39.5287 36.3833 38.2964C38.5803 35.5062 39.5794 31.8393 39.8167 29.313ZM40.8966 28.2025C40.8968 28.2025 40.8969 28.2025 40.897 28.2026C41.0341 28.2283 41.4319 28.1982 42.2681 27.7529C42.6704 27.5387 42.8385 27.2588 42.9139 26.9098C42.9985 26.519 42.9647 26.0544 42.9177 25.4785C42.9158 25.4553 42.9139 25.432 42.9119 25.4085C42.8244 24.3449 42.7058 22.9048 44.0376 21.9592C44.7306 21.4672 45.4876 21.6999 46.0938 22.1251C46.7 22.5503 47.3009 23.2534 47.8549 24.0412C48.4747 24.9225 49.0701 25.96 49.5824 26.9553C49.5054 26.2115 49.3815 25.334 49.1939 24.3616C48.7192 21.9012 47.8448 18.8778 46.3252 15.944C43.2953 10.0947 37.7134 4.60791 27.5472 4.60791C19.374 4.60791 14.0083 7.7187 10.6042 11.5772C7.18569 15.4519 5.72464 20.1059 5.42873 23.1895C5.1699 26.1325 5.40883 30.2048 6.65868 34.321C6.6445 34.2427 6.63076 34.1643 6.61743 34.0859C6.24854 31.9135 6.19323 29.6241 6.25517 28.1729L6.26736 27.8873L6.5197 27.7529C6.95823 27.5194 7.65935 27.0298 8.28098 26.3435C8.903 25.6567 9.41426 24.808 9.54218 23.8544C9.70977 22.605 10.3725 21.788 11.1287 21.2906C11.724 20.899 12.3756 20.7049 12.8959 20.634C13.7894 18.0299 15.2642 15.3285 17.5564 13.2736C19.9516 11.1262 23.2145 9.7082 27.5605 9.82391C33.261 9.97569 36.6967 12.9499 38.6428 16.7057C40.57 20.4251 41.0418 24.9085 40.8966 28.2025ZM18.2239 14.0182C17.3515 14.8003 16.6021 15.6877 15.9626 16.6343C18.4283 14.2054 22.2266 11.7654 27.4745 10.9945C27.8942 10.9329 28.301 10.9016 28.6953 10.8988C28.3202 10.8595 27.9332 10.8342 27.5339 10.8236C23.4427 10.7146 20.4283 12.0419 18.2239 14.0182ZM12.552 21.7276C12.2682 21.8104 11.9631 21.9387 11.6782 22.1261C11.1317 22.4856 10.6575 23.0612 10.5333 23.9873C10.3694 25.2093 9.72551 26.2382 9.02216 27.0148C8.42315 27.6761 7.75838 28.1798 7.24435 28.4905C7.20265 29.8934 7.27116 31.9625 7.60332 33.9184C7.78057 34.9623 8.03042 35.9586 8.37062 36.7985C8.71334 37.6446 9.13131 38.2907 9.62022 38.6813C11.9713 40.5592 12.6541 43.2686 12.7208 44.6123C15.7756 47.5754 20.0013 49.8367 25.7903 50.6196C34.8033 51.8385 40.6195 48.5462 44.2641 43.9664C47.8988 39.3991 49.3967 33.5167 49.6572 29.4477C49.0517 28.0458 48.0703 26.0859 47.0369 24.6164C46.5027 23.8567 45.9818 23.268 45.5196 22.9438C45.0572 22.6195 44.7989 22.6451 44.6165 22.7746C43.7815 23.3674 43.8187 24.2259 43.9144 25.3971L43.9175 25.4355C43.9607 25.9635 44.0104 26.5706 43.8913 27.1212C43.7603 27.7271 43.4264 28.2691 42.7382 28.6356C41.9323 29.0647 41.3085 29.2481 40.8312 29.2021C40.8252 29.2712 40.8188 29.3396 40.8122 29.4074C40.5629 32.0609 39.5192 35.9301 37.1689 38.9151C34.7931 41.9324 31.0887 44.0285 25.6359 43.0606C20.2291 42.1009 16.7716 39.1593 14.6602 35.8751C12.5585 32.6057 11.7895 28.9982 11.7266 26.6537L11.7261 26.6361L11.7269 26.6185C11.7875 25.2307 12.0382 23.5202 12.552 21.7276ZM50.1758 24.1721C50.6578 26.6708 50.7454 28.6378 50.6619 29.4022C50.4121 33.6171 48.8751 39.7781 45.0466 44.589C43.9785 45.9311 42.7339 47.1655 41.2936 48.2219C42.2769 47.6862 43.1942 47.0812 44.0411 46.4042C48.4262 42.8984 51 37.3984 51 29.3597C51 21.2977 48.7292 14.7129 44.6201 10.1496C40.5168 5.59265 34.5345 3 27 3C19.4139 3 13.6882 4.78263 9.85619 8.49428C6.02721 12.203 4 17.9244 4 26C4 34.094 5.71716 40.4617 9.2573 44.7987C12.643 48.9464 17.7554 51.3084 24.8379 51.4888C19.167 50.5669 14.9543 48.2289 11.8748 45.1834C5.20827 38.5903 3.93351 28.7713 4.43272 23.1L4.43309 23.0962C4.74562 19.8344 6.27588 14.9716 9.8543 10.9156C13.4478 6.84245 19.0864 3.60791 27.5472 3.60791C38.1734 3.60791 44.0551 9.38732 47.2131 15.4841C48.7874 18.5233 49.6879 21.6429 50.1758 24.1721ZM8.63147 39.1277C9.41174 40.5912 10.3557 42.003 11.4889 43.3093C11.158 42.1158 10.4301 40.608 8.99612 39.4626C8.86836 39.3606 8.74693 39.2485 8.63147 39.1277ZM15.5014 35.3343C17.4806 38.413 20.7082 41.1679 25.8021 42.0745C29.9226 42.6561 32.8549 40.5439 34.8852 37.5574C36.9151 34.5715 37.99 30.7736 38.3539 28.1699C38.2288 25.1679 37.5238 20.782 35.8341 17.3121C34.9862 15.5708 33.9061 14.0927 32.5585 13.1252C31.2242 12.1671 29.605 11.6923 27.6198 11.9839C19.3798 13.1943 14.9266 18.7142 13.7326 21.2857C13.0936 23.2523 12.7935 25.1547 12.7267 26.6444C12.7888 28.833 13.5168 32.2472 15.5014 35.3343ZM37.5286 28.2476L37.5287 28.2476L37.5272 28.2592C37.1561 31.0916 35.9467 35.0104 33.4593 37.4387C32.2025 38.6657 30.6117 39.518 28.6492 39.6378C26.6945 39.757 24.4276 39.1463 21.8155 37.5566L21.6943 37.4828L21.6299 37.3563L20.5705 35.2751C18.1811 32.8264 16.9107 29.1183 16.4766 26.7297L16.4698 26.692L16.4687 26.6537C16.4064 24.3285 16.8704 20.8684 18.496 18.0478C19.3126 16.6311 20.43 15.3628 21.9329 14.4912C23.4394 13.6175 25.304 13.1596 27.5826 13.3214C30.2586 13.5114 32.2865 14.4768 33.7914 15.8836C35.2892 17.2838 36.2439 19.0973 36.8249 20.9535C36.8356 20.9874 36.8461 21.0214 36.8565 21.0554C37.6462 23.6407 37.733 26.3426 37.5286 28.2476ZM27.6382 37.6211C25.614 37.9961 23.8896 37.6038 22.4497 36.7625L22.4562 36.7753C24.897 38.2374 26.9226 38.7413 28.5883 38.6396C30.2735 38.5368 31.6466 37.8109 32.7608 36.7232C33.6552 35.85 34.3776 34.7477 34.9462 33.5648C33.393 35.3656 31.047 36.9898 27.6382 37.6211ZM27.4561 36.6379C33.8959 35.4451 36.1882 30.4429 36.5354 28.1307C36.7268 26.3346 36.6421 23.7766 35.9001 21.3475C35.8905 21.3161 35.8808 21.2848 35.871 21.2534C35.67 20.6195 35.3319 19.8685 34.9548 19.4653C34.7662 19.2637 34.6389 19.2245 34.5767 19.2245C34.5326 19.2245 34.3843 19.2449 34.1482 19.5593C33.4702 20.4619 32.376 20.9885 31.3559 21.2922C30.3251 21.599 29.2916 21.7014 28.6415 21.7014H28.5761L28.5129 21.6846C28.3124 21.6312 27.2444 21.6562 26.1471 23.4092C25.449 24.5243 24.3541 24.8966 23.3392 24.9257C22.339 24.9544 21.3667 24.6565 20.7672 24.3728L20.7142 24.3477L20.6685 24.3111C20.5311 24.201 20.2903 24.1119 20.0185 24.2078C19.7417 24.3055 19.3041 24.6402 18.8913 25.6621C18.6651 26.2219 18.4566 26.6341 18.2612 26.9258C18.0966 27.1715 17.9032 27.3907 17.6649 27.504C18.2157 29.7505 19.3992 32.6724 21.3363 34.6276C22.8787 36.1844 24.88 37.115 27.4561 36.6379ZM33.3487 18.9587C33.6558 18.5498 34.0282 18.2706 34.4651 18.2297C34.077 17.6434 33.6272 17.099 33.1085 16.6141C31.7778 15.3702 29.9686 14.4933 27.5118 14.3189C25.413 14.1699 23.7513 14.5926 22.4346 15.3562C21.1143 16.1219 20.1114 17.2477 19.3624 18.5472C17.9258 21.0398 17.4522 24.1237 17.4635 26.3185C17.5996 26.1043 17.767 25.7752 17.9641 25.2875C18.4302 24.1339 19.0268 23.4974 19.6858 23.2648C20.3173 23.042 20.8879 23.2317 21.2411 23.4904C21.7395 23.7179 22.5296 23.9485 23.3105 23.9261C24.1012 23.9034 24.8302 23.6282 25.2995 22.8786C26.499 20.9623 27.909 20.5379 28.6976 20.7011C29.268 20.6953 30.1736 20.6007 31.0706 20.3337C32.0081 20.0547 32.8594 19.6101 33.3487 18.9587ZM0.5 27C0.5 41.6355 12.3645 53.5 27 53.5C32.1506 53.5 36.958 52.0306 41.0258 49.4881C36.8162 51.5749 31.5999 52.5 25.7233 52.5C17.9559 52.5 12.2413 50.0358 8.48261 45.431C4.7389 40.8446 3 34.2123 3 26C3 17.7693 5.06721 11.7407 9.16045 7.77599C13.2507 3.81422 19.2749 2 27 2C34.7766 2 41.0443 4.68405 45.3632 9.48041C49.6764 14.2704 52 21.1154 52 29.3597C52 33.5869 51.3048 37.1744 50.0005 40.1707C52.2269 36.2909 53.5 31.7941 53.5 27C53.5 12.3645 41.6355 0.5 27 0.5C12.3645 0.5 0.5 12.3645 0.5 27Z"
+                        stroke="black"
+                      />
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rightControlBoxOuter">
+        <div class="rightControlBox">
+          <div class="soundBoxOuter" id="soundBoxOuter">
+            <img
+              class="soundBox"
+              src="./SVG/components/lines.svg"
+              alt="emojiContainer"
+            />
+            <div class="emojiContainer" id="emojiContainer">
+              <span class="emoji">🎵</span>
+              <span class="emoji">🎶</span>
+              <span class="emoji">✨</span>
+              <span class="emoji">🪩</span>
+              <span class="emoji">🌟</span>
+              <span class="emoji">🎧</span>
+              <span class="emoji">⚡</span>
+              <span class="emoji">🧨</span>
+            </div>
+          </div>
+          <div class="audioControlBox">
+            <div class="roundtr1 roundRed" id="btnSound">
+              <img src="./SVG/components/sound.svg" alt="sound" />
+            </div>
+            <div class="roundtr2 roundRed" id="btnTamil">Tamil</div>
+            <div class="roundtr3 roundRed" id="btnEnglish">English</div>
+            <audio id="tamilAudio" src="./Song/tamil1.mp3" loop></audio>
+            <audio id="englishAudio" src="./Song/eng1.mp3" loop></audio>
+          </div>
+        </div>
+      </div>
+      <div class="standBox">
+        <div class="standLHS"></div>
+        <div class="standRHS"></div>
+      </div>
+    </div>
+
+    <div class="notOptimise">Website is not fully Optimised</div>
+
+    <div class="info-icon-container">
+      <img class="info-icon" src="./SVG/spiderInfo.svg" />
+      <!-- <img class="info-icon" src="/ad.svg"/> -->
+      <div class="beta-banner">🚧 You’re exploring the beta version 🚧</div>
+    </div>
+
+    <div class="referalBox">
+      <div
+        onclick="window.open('https://www.linkedin.com/in/ashwoq-dedath-s/', '_blank');"
+        class="linkedIn"
+      >
+        <img src="./SVG/linkedin.svg" alt="linkedIn" />
+      </div>
+
+      <div
+        onclick="window.open('https://x.com/Ashwoq_s', '_blank');"
+        class="twitter"
+      >
+        <img src="./SVG/twitter.svg" alt="twitter" />
+      </div>
+      <!-- <div onclick="window.open('https://www.instagram.com/ashwoq_s_/', '_blank');" 
+  class="instagram">
+  <img src="./SVG/insta.svg" alt="instagram">
+</div> -->
+    </div>
+  </body>
+</html>
