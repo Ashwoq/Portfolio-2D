@@ -1,4 +1,4 @@
-# 🌆 Ashwoq Portfolio 2D (V2 / V2.1)
+# 🌆 Ashwoq Portfolio 2D (V2.1)
 
 This branch contains **intermediate versions (V2 & V2.1)** of my 2D portfolio — sitting between the initial **V1** and the more refined **V2.2 (latest)**.
 
